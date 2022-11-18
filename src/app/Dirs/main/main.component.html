@@ -1,0 +1,40 @@
+<div class="ads">
+  <h1>ads or description/slides?</h1>
+</div>
+
+<main>
+  <div class="main-overview">
+    <mat-tab-group>
+      <mat-tab label="INDICES">
+        <div class="main-container">
+        <div class="main-button-container">
+          <li *ngFor="let indice of indices">
+            <button>{{indice.code}}</button>
+        </li>
+        </div>
+          <div class="main-chart-container"><app-stock-chart></app-stock-chart></div>
+        </div>
+      </mat-tab>
+      <mat-tab label="STOCKS">
+        <div class="main-container">
+        <div class="main-button-container">
+          <li *ngFor="let stock of stocks">
+            <button>{{stock.code}}</button>
+          </li>
+        </div>
+          <div class="main-chart-container"><app-stock-chart></app-stock-chart></div>
+        </div>
+      </mat-tab>
+      <mat-tab label="CRYPTO">
+        <div class="main-container">
+          <div class="main-button-container">
+            <li *ngFor="let crypto of crypto">
+              <button>{{crypto.code}}</button>
+            </li>
+          </div>
+          <div class="main-chart-container"><app-stock-chart></app-stock-chart></div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</main>

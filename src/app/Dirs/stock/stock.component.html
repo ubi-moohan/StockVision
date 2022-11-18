@@ -1,0 +1,23 @@
+<div class="box-asset-container">
+  <div class="box-asset-simple">
+    <app-asset></app-asset>
+  </div>
+</div>
+
+<div class="stock-main-container">
+  <div class="stock-main-chart">
+    <div class="charts">
+      <app-stock-chart></app-stock-chart>
+    </div>
+    <div class="add-function">
+      <app-stock-tech [searchedCode]="stocks"></app-stock-tech>
+    </div>
+  </div>
+
+  <div class="stock-main-portfolio">
+    <p>portfolio</p>
+    <app-stock-portfolio></app-stock-portfolio>
+  </div>
+</div>
+
+

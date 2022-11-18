@@ -1,0 +1,60 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="year">
+    <th mat-header-cell *matHeaderCellDef> Year </th>
+    <td mat-cell *matCellDef="let element"> ({{element.year}}) </td>
+  </ng-container>
+
+  <ng-container matColumnDef="revenue">
+    <th mat-header-cell *matHeaderCellDef> Revenue </th>
+    <td mat-cell *matCellDef="let element"> {{element.revenue}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="grossmargin">
+    <th mat-header-cell *matHeaderCellDef> Gross Margin </th>
+    <td mat-cell *matCellDef="let element"> {{element.grossmargin}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="ebt">
+    <th mat-header-cell *matHeaderCellDef> EBT </th>
+    <td mat-cell *matCellDef="let element"> {{element.ebt}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="ebtmargin">
+    <th mat-header-cell *matHeaderCellDef> EBT Margin </th>
+    <td mat-cell *matCellDef="let element"> {{element.ebtmargin}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="netincome">
+    <th mat-header-cell *matHeaderCellDef> Net Income </th>
+    <td mat-cell *matCellDef="let element"> {{element.netincome}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="capex">
+    <th mat-header-cell *matHeaderCellDef> CAPEX </th>
+    <td mat-cell *matCellDef="let element"> {{element.capex}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="shares">
+    <th mat-header-cell *matHeaderCellDef> Shares </th>
+    <td mat-cell *matCellDef="let element"> {{element.shares}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="roa">
+    <th mat-header-cell *matHeaderCellDef> ROA </th>
+    <td mat-cell *matCellDef="let element"> {{element.roa}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="roic">
+    <th mat-header-cell *matHeaderCellDef> ROIC </th>
+    <td mat-cell *matCellDef="let element"> {{element.roic}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="roe">
+    <th mat-header-cell *matHeaderCellDef> ROE </th>
+    <td mat-cell *matCellDef="let element"> {{element.roe}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

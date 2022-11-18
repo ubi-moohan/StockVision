@@ -1,0 +1,46 @@
+.stock-detail-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 5rem;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 50rem;
+  position: relative;
+}
+
+.stock-detail-charts-watchlist {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+}
+
+.stock-detail-holding {
+  width: 70rem;
+}
+
+.stock-detail-charts {
+  width: 50rem;
+  height: 40rem;
+  background-color: #D9D9D9;
+  border: solid 1px black;
+}
+
+.stock-detail-watchlist {
+  width: 20rem;
+  height: 40rem;
+  background-color: #D9D9D9;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.stock-detail-info {
+  width: 70rem;
+  height: 50rem;
+  background-color: #D9D9D9;
+  margin: 7rem 0 5rem 0;
+}

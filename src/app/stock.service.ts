@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from "rxjs";
 import { Indices, Stock, Crypto, Asset, Holdings, FinancialStatement, Analysis } from "./Engine/interfaces/stock";
 import { INDICES, STOCKS, CRYPTO, ASSET, HOLDINGS, FS } from "./Engine/models/mock-stock";
 
@@ -7,16 +8,19 @@ import { INDICES, STOCKS, CRYPTO, ASSET, HOLDINGS, FS } from "./Engine/models/mo
 })
 export class StockService {
 
-  getIndices(): Indices[] {
-    return INDICES;
+  getIndices(): Observable<Indices[]> {
+    const indices = of(INDICES)
+    return indices;
   }
 
-  getStocks(): Stock[] {
-    return STOCKS;
+  getStocks(): Observable<Stock[]> {
+    const stocks = of(STOCKS)
+    return stocks;
   }
 
-  getCrypto(): Crypto[] {
-    return CRYPTO;
+  getCrypto(): Observable<Crypto[]> {
+    const crypto = of(CRYPTO)
+    return crypto;
   }
 
   constructor() { }
