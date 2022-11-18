@@ -1,0 +1,8 @@
+<div class="stock-watchlist-container">
+  <mat-button-toggle class="btn-add-watchlist">Add to Watchlist</mat-button-toggle>
+  <div>
+      <li style="list-style: none" *ngFor="let values of searchedCode">
+        <h2>{{values.price}}&nbsp;&nbsp;&nbsp;&nbsp;{{values.change}}&nbsp;&nbsp;({{values.percentage}}%)</h2>
+      </li>
+  </div>
+</div>

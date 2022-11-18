@@ -1,0 +1,16 @@
+.stock-watchlist-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-add-watchlist {
+  margin-top: 2rem;
+  width: 17rem;
+  height: 2.5rem;
+  color: #FFFFFF;
+  font-weight: bold;
+  background: #6CA56E;
+  border-radius: 1rem;
+}

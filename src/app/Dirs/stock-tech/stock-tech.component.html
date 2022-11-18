@@ -1,0 +1,28 @@
+<div class="stock-tech-container">
+  <form class="input-holding">
+    <mat-form-field class="stock-tech-input" appearance="fill">
+      <mat-label>Search Code or Name</mat-label>
+      <input matInput placeholder="ex) AAPL" class="detail-input">
+    </mat-form-field>
+    <section>
+    <h4>추가한 종목</h4>
+      <li style="list-style: none" *ngFor="let values of searchedCode">
+        <a routerLink="detail/{{values.code}}"><button class="stock-tech-holdings">
+          <span>{{values.code}}&nbsp;{{values.name}}&nbsp;&nbsp;&nbsp;{{values.price}}</span>
+        </button></a>
+      </li>
+    </section>
+  </form>
+  <section>
+    <h4>Technical Chart</h4>
+    <mat-checkbox [checked]="allComplete"
+                  [indeterminate]="someComplete()"
+                  (change)="setAll($event.checked)">{{analysis.name}}</mat-checkbox>
+    <ul>
+      <li style="list-style: none" *ngFor="let tech of analysis.subanalysis">
+        <mat-checkbox [(ngModel)]="tech.completed"
+                      (ngModelChange)="updateAllComplete()">{{tech.name}}</mat-checkbox>
+      </li>
+    </ul>
+  </section>
+</div>
