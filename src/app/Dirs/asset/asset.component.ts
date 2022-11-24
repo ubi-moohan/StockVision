@@ -1,25 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
-import { ASSET, HOLDINGS } from "../../Engine/models/mock-stock";
+import { Holdings } from "../../Engine/interfaces/stock";
+import { StockService } from "../../stock.service";
 
 @Component({
   selector: 'app-asset',
   templateUrl: './asset.component.html',
   styleUrls: ['./asset.component.scss']
 })
-export class AssetComponent implements OnInit {
-  holding = HOLDINGS;
-  // asset 부분 수정 필요.
-  // holding 연결 어떻게?
-  asset = {
-    total: 56723,
-    change: 5093,
-    percentage: 5.4
-  };
 
-  constructor() { }
+// export interface TotalAsset {
+//   total: number;
+// }
+
+export class AssetComponent implements OnInit {
+  @Input() holdings: Holdings[] = [];
+
+  // total: number = this.getTotalAsset();
+
+  constructor(private stockService: StockService, /*public price: number, public shares: number*/) { }
+
+  getHoldings(): void{
+    this.stockService.getHoldings()
+      .subscribe(holdings => this.holdings = holdings)
+  }
+
+  // getTotalAsset(): number {
+  //   this.total = `${this.price*this.shares}`
+  // }
 
   ngOnInit(): void {
+    this.getHoldings()
   }
 
 }

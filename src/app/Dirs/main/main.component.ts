@@ -8,6 +8,7 @@ import { StockService } from "../../stock.service";
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
+
 export class MainComponent implements OnInit {
   indices: Indices[] = [];
   stocks: Stock[] = [];

@@ -1,6 +1,6 @@
 <div class="box-asset-container">
   <div class="box-asset-simple">
-    <app-asset></app-asset>
+    <app-asset [holdings]="holdings"></app-asset>
   </div>
 </div>
 
@@ -10,7 +10,7 @@
       <app-stock-chart></app-stock-chart>
     </div>
     <div class="add-function">
-      <app-stock-tech [searchedCode]="stocks"></app-stock-tech>
+      <app-stock-tech [searchedCode]="holdings"></app-stock-tech>
     </div>
   </div>
 

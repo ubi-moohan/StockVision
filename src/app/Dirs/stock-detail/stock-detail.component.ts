@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Holdings } from "../../Engine/interfaces/stock";
+import { StockService } from "../../stock.service";
+
 @Component({
   selector: 'app-stock-detail',
   templateUrl: './stock-detail.component.html',
@@ -9,18 +12,17 @@ export class StockDetailComponent implements OnInit {
   code = "AAPL";
   name = "Apple.Inc"
 
-  stocks = [{
-    code: "AAPL",
-    name: "Apple.Inc",
-    price: 146.87,
-    change: -8.4,
-    percentage: -5.59,
-  }];
+  holdings: Holdings[] = [];
 
+  constructor(private stockService: StockService) { }
 
-  constructor() { }
+  getHoldings(): void {
+    this.stockService.getHoldings()
+      .subscribe(holdings => this.holdings = holdings)
+  }
 
   ngOnInit(): void {
+    this.getHoldings()
   }
 
 }

@@ -1,12 +1,12 @@
 <div class="stock-tech-container">
-  <form class="input-holding">
+  <form>
     <mat-form-field class="stock-tech-input" appearance="fill">
       <mat-label>Search Code or Name</mat-label>
       <input matInput placeholder="ex) AAPL" class="detail-input">
     </mat-form-field>
     <section>
     <h4>추가한 종목</h4>
-      <li style="list-style: none" *ngFor="let values of searchedCode">
+      <li style="list-style: none" *ngFor="let values of searchedCode | slice:0:4;">
         <a routerLink="detail/{{values.code}}"><button class="stock-tech-holdings">
           <span>{{values.code}}&nbsp;{{values.name}}&nbsp;&nbsp;&nbsp;{{values.price}}</span>
         </button></a>

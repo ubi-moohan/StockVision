@@ -19,6 +19,7 @@ import { StockWatchlistComponent } from './Dirs/stock-watchlist/stock-watchlist.
 import { StockPredictComponent } from './Dirs/stock-predict/stock-predict.component';
 import { FinancialStatementComponent } from './Dirs/stock-info/financial-statement/financial-statement.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,11 +38,11 @@ import { FinancialStatementComponent } from './Dirs/stock-info/financial-stateme
     StockPredictComponent,
     FinancialStatementComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        MaterialModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MaterialModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

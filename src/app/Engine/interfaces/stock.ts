@@ -32,7 +32,9 @@ export interface Holdings {
   name: string;
   price: number;
   change: number;
-  percentage: number
+  percentage: number;
+  shares: number;
+  sum?: number;
 }
 
 export interface Asset {

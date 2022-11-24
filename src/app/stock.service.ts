@@ -23,5 +23,10 @@ export class StockService {
     return crypto;
   }
 
+  getHoldings(): Observable<Holdings[]> {
+    const holdings = of(HOLDINGS)
+    return holdings;
+  }
+
   constructor() { }
 }

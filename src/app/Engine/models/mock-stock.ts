@@ -16,7 +16,12 @@ export const CRYPTO: Crypto[] = [
 ]
 
 export const HOLDINGS: Holdings[] = [
-  { code: "AAPL", name: "Apple.Inc", price: 146.87, change: -8.4, percentage: -5.59 }
+  { code: "AAPL", name: "Apple.Inc", price: 146.87, change: -8.4, percentage: -5.59, shares: 100 },
+  { code: 'GOOGL', name: 'Alphabet.Inc', price: 141.34, change: -4.3, percentage: -4.3, shares: 70 },
+  { code: 'AMZN', name: 'Amazon', price: 126.34, change: -3.3, percentage: -5, shares: 50 },
+  { code: 'MSFT', name: 'Microsoft Corporation', price: 247.58, change: 2.4, percentage: 1.03, shares: 60 },
+  { code: 'MSFT', name: 'Microsoft Corporation', price: 247.58, change: 2.4, percentage: 1.03, shares: 60 },
+  { code: 'MSFT', name: 'Microsoft Corporation', price: 247.58, change: 2.4, percentage: 1.03, shares: 60 },
 ]
 
 export const ASSET: Asset[] = [
