@@ -18,6 +18,7 @@ export interface Task {
 export class StockTechComponent implements OnInit {
   @Input() searchedCode: Holdings[] = [];
 
+
   analysis: Analysis = {
     name: 'Select All',
     completed: false,

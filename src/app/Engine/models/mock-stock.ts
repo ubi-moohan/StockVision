@@ -5,9 +5,10 @@ export const INDICES: Indices[] = [
 ]
 
 export const STOCKS: Stock[] = [
-  { date: 221107, code: 'AAPL', open: 141.34, close: 134.87, high: 143.14, low: 134.54 },
-  { date: 221107, code: 'GOOGL', open: 141.34, close: 134.87, high: 143.14, low: 134.54 },
-  { date: 221107, code: 'AMZN', open: 141.34, close: 134.87, high: 143.14, low: 134.54 },
+  { date: 221107, code: 'AAPL', name: 'Apple.Inc', open: 141.34, close: 134.87, high: 143.14, low: 134.54 },
+  { date: 221107, code: 'GOOGL', name: 'Alphabet', open: 141.34, close: 134.87, high: 143.14, low: 134.54 },
+  { date: 221107, code: 'AMZN', name: 'Amazon', open: 141.34, close: 134.87, high: 143.14, low: 134.54 },
+  { date: 221107, code: 'MSFT', name: 'Microsoft Corporation', open: 247.58, close: 242.4, high: 248.71, low: 242.3 },
 ]
 
 export const CRYPTO: Crypto[] = [

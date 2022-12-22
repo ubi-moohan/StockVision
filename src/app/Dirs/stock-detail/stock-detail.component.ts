@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, NgModule, OnInit} from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
+import { Location } from "@angular/common";
 
-import { Holdings } from "../../Engine/interfaces/stock";
+import { Holdings, Stock } from "../../Engine/interfaces/stock";
 import { StockService } from "../../stock.service";
 
 @Component({
@@ -9,20 +11,34 @@ import { StockService } from "../../stock.service";
   styleUrls: ['./stock-detail.component.scss']
 })
 export class StockDetailComponent implements OnInit {
-  code = "AAPL";
   name = "Apple.Inc"
 
   holdings: Holdings[] = [];
+  stock: Stock | undefined;
 
-  constructor(private stockService: StockService) { }
+  console = console;
+
+  constructor(
+    private route: ActivatedRoute,
+    private stockService: StockService,
+    private location: Location,
+    ) { }
 
   getHoldings(): void {
     this.stockService.getHoldings()
       .subscribe(holdings => this.holdings = holdings)
   }
 
+  getStock(): void {
+    const code = this.route.snapshot.paramMap.get('code');
+    this.stockService.getStock(code)
+      .subscribe(stock => this.stock = stock);
+  }
+
   ngOnInit(): void {
     this.getHoldings()
+    this.getStock()
   }
 
 }
+

@@ -1,9 +1,15 @@
-<h2 style="color: #EBEBEB">5039</h2>
-<div class="asset-main-holdings">
-  holding:
-  <li *ngFor="let holding of holdings | slice:0:4;">
-    <div *ngIf="holding.shares > 50">
-      <span style="color: #EBEBEB"><button><a routerLink="/stock/detail">{{holding.code}} {{holding.shares*holding.price | number: "0.2"}} {{holding.percentage | number: "0.2"}}%</a></button></span>
+<h2 style="color: #EBEBEB">{{title}}</h2>
+<div class="asset-main-container">
+  <div class="asset-main-leftbox">
+    <div class="asset-total">
+
     </div>
-  </li>
+  </div>
+  <div class="asset-main-holdings">
+    <li *ngFor="let holding of holdings | slice:0:4;">
+      <div *ngIf="holding.shares > 50">
+        <span style="color: #EBEBEB"><button><a routerLink="/stock/detail/{{holding.code}}">{{holding.code}} {{holding.shares*holding.price | number: "0.2"}} {{holding.percentage | number: "0.2"}}%</a></button></span>
+      </div>
+    </li>
+  </div>
 </div>

@@ -18,6 +18,11 @@ export class StockService {
     return stocks;
   }
 
+  getStock(code: any): Observable<Stock> {
+    const stock = STOCKS.find(h => h.code === code)!;
+    return of(stock);
+  }
+
   getCrypto(): Observable<Crypto[]> {
     const crypto = of(CRYPTO)
     return crypto;

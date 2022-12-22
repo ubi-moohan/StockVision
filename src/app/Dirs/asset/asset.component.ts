@@ -16,6 +16,8 @@ import { StockService } from "../../stock.service";
 export class AssetComponent implements OnInit {
   @Input() holdings: Holdings[] = [];
 
+  title = "ASSET";
+
   // total: number = this.getTotalAsset();
 
   constructor(private stockService: StockService, /*public price: number, public shares: number*/) { }

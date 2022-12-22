@@ -25,6 +25,7 @@
     "bootstrap": "^5.2.3",
     "chart.js": "^3.9.1",
     "chartjs-plugin-annotation": "^2.0.1",
+    "date-fns": "^2.29.3",
     "jquery": "^3.6.1",
     "ng2-charts": "^4.0.1",
     "popper.js": "^1.16.1",

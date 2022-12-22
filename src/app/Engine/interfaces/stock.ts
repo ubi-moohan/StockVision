@@ -11,6 +11,7 @@ export interface Indices {
 export interface Stock {
   date: number;
   code: string;
+  name: string;
   open: number;
   close: number;
   high: number;

@@ -2,6 +2,40 @@ li {
   list-style: none;
 }
 
+button {
+  border: 0;
+  width: 18rem;
+  height: 2rem;
+  border-radius: .2rem;
+  margin-bottom: .2rem;
+}
+
+button a {
+  text-decoration: none;
+  color: #091241;
+}
+
+.asset-main-leftbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 40rem;
+}
+
+.asset-total {
+  width: 20rem;
+  height: 3rem;
+  background-color: #333550;
+  border-radius: .5rem;
+}
+
+.asset-main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+
+
 .asset-main-holdings {
-  justify-content: flex-end;
+
 }
