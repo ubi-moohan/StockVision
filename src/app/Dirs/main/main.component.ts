@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Indices, Stock, Crypto } from "../../Engine/interfaces/stock";
+import { Indices, Stocks, Crypto } from "../../Engine/interfaces/stock";
 import { StockService } from "../../stock.service";
 
 @Component({
@@ -11,10 +11,10 @@ import { StockService } from "../../stock.service";
 
 export class MainComponent implements OnInit {
   indices: Indices[] = [];
-  stocks: Stock[] = [];
+  stocks: Stocks[] = [];
   crypto: Crypto[] = [];
 
-  selectedStock?: Stock;
+  selectedStock?: Stocks;
 
   constructor(private stockService: StockService) { }
   //: 뒤에는 타입이 들어가는 것 아닌가? StockService가 들어가고도 정상작동하는 이유.
@@ -40,7 +40,7 @@ export class MainComponent implements OnInit {
     this.getCrypto()
   }
 
-  onSelect(stocks: Stock): void {
+  onSelect(stocks: Stocks): void {
     this.selectedStock = stocks;
   }
 

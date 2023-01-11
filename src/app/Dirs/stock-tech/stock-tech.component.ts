@@ -16,8 +16,7 @@ export interface Task {
   styleUrls: ['./stock-tech.component.scss']
 })
 export class StockTechComponent implements OnInit {
-  @Input() searchedCode: Holdings[] = [];
-
+  @Input() holdings: Holdings[] = [];
 
   analysis: Analysis = {
     name: 'Select All',

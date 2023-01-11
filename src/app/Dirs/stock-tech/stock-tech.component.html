@@ -6,9 +6,9 @@
     </mat-form-field>
     <section>
     <h4>추가한 종목</h4>
-      <li style="list-style: none" *ngFor="let values of searchedCode | slice:0:4;">
+      <li style="list-style: none" *ngFor="let values of holdings | slice:0:4;">
         <a routerLink="detail/{{values.code}}"><button class="stock-tech-holdings">
-          <span>{{values.code}}&nbsp;{{values.name}}&nbsp;&nbsp;&nbsp;{{values.price}}</span>
+          <span>{{values.code}}&nbsp;{{values.name}}&nbsp;&nbsp;&nbsp;{{values.curPrice}}</span>
         </button></a>
       </li>
     </section>

@@ -12,6 +12,7 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatTableModule} from "@angular/material/table";
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import 'ng2-charts'
 
 @NgModule({
   declarations: [],

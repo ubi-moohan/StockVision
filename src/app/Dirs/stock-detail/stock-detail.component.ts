@@ -2,7 +2,7 @@ import {Component, NgModule, OnInit} from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { Location } from "@angular/common";
 
-import { Holdings, Stock } from "../../Engine/interfaces/stock";
+import { Holdings, Stocks } from "../../Engine/interfaces/stock";
 import { StockService } from "../../stock.service";
 
 @Component({
@@ -14,7 +14,7 @@ export class StockDetailComponent implements OnInit {
   name = "Apple.Inc"
 
   holdings: Holdings[] = [];
-  stock: Stock | undefined;
+  stock: Stocks | null = null;
 
   console = console;
 
@@ -32,7 +32,7 @@ export class StockDetailComponent implements OnInit {
   getStock(): void {
     const code = this.route.snapshot.paramMap.get('code');
     this.stockService.getStock(code)
-      .subscribe(stock => this.stock = stock);
+      .subscribe((res) => this.stock = (res));
   }
 
   ngOnInit(): void {

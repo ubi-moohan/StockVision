@@ -2,13 +2,14 @@
 <div class="asset-main-container">
   <div class="asset-main-leftbox">
     <div class="asset-total">
-
+      ${{curTotal.toFixed(2)}} | {{(curTotal - avgTotal).toFixed(2)}}&nbsp;&nbsp;{{(((curTotal-avgTotal)/curTotal)*100).toFixed(2)}}% <!--toFixed() 소수점 자르기-->
     </div>
   </div>
   <div class="asset-main-holdings">
+    {{dateObj | date}}
     <li *ngFor="let holding of holdings | slice:0:4;">
-      <div *ngIf="holding.shares > 50">
-        <span style="color: #EBEBEB"><button><a routerLink="/stock/detail/{{holding.code}}">{{holding.code}} {{holding.shares*holding.price | number: "0.2"}} {{holding.percentage | number: "0.2"}}%</a></button></span>
+      <div *ngIf="holding.quantity > 50">
+        <span style="color: #EBEBEB"><button><a routerLink="/stock/detail/{{holding.code}}">{{holding.code}} {{holding.quantity*holding.curPrice | number: "0.2"}}</a></button></span>
       </div>
     </li>
   </div>

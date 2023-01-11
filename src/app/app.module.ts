@@ -18,6 +18,7 @@ import { StockPortfolioComponent } from './Dirs/stock-portfolio/stock-portfolio.
 import { StockWatchlistComponent } from './Dirs/stock-watchlist/stock-watchlist.component';
 import { StockPredictComponent } from './Dirs/stock-predict/stock-predict.component';
 import { FinancialStatementComponent } from './Dirs/stock-info/financial-statement/financial-statement.component';
+import { FilterPipe } from './Dirs/filter.pipe';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { FinancialStatementComponent } from './Dirs/stock-info/financial-stateme
     StockWatchlistComponent,
     StockPredictComponent,
     FinancialStatementComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

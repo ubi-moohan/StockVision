@@ -15,24 +15,24 @@ import { StockService } from "../../stock.service";
 
 export class AssetComponent implements OnInit {
   @Input() holdings: Holdings[] = [];
-
+  console = console;
   title = "ASSET";
 
-  // total: number = this.getTotalAsset();
+  dateObj = Date.now()
+  curTotal: number = this.getCurTotalAsset()
+  avgTotal: number = this.getAvgTotalAsset()
 
-  constructor(private stockService: StockService, /*public price: number, public shares: number*/) { }
-
-  getHoldings(): void{
-    this.stockService.getHoldings()
-      .subscribe(holdings => this.holdings = holdings)
-  }
-
-  // getTotalAsset(): number {
-  //   this.total = `${this.price*this.shares}`
-  // }
+  constructor(private stockService: StockService) { }
 
   ngOnInit(): void {
-    this.getHoldings()
+    // this.getCurTotalAsset()
+  }
+  getCurTotalAsset(): number {
+    return this.stockService.getCurTotalAsset()
+  }
+
+  getAvgTotalAsset(): number {
+    return this.stockService.getAvgTotalAsset()
   }
 
 }

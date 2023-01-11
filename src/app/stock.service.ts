@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from "rxjs";
-import { Indices, Stock, Crypto, Asset, Holdings, FinancialStatement, Analysis } from "./Engine/interfaces/stock";
+import { Indices, Stocks, Crypto, Asset, Holdings, FinancialStatement, Analysis } from "./Engine/interfaces/stock";
 import { INDICES, STOCKS, CRYPTO, ASSET, HOLDINGS, FS } from "./Engine/models/mock-stock";
 
 @Injectable({
@@ -13,12 +13,12 @@ export class StockService {
     return indices;
   }
 
-  getStocks(): Observable<Stock[]> {
+  getStocks(): Observable<Stocks[]> {
     const stocks = of(STOCKS)
     return stocks;
   }
 
-  getStock(code: any): Observable<Stock> {
+  getStock(code: any): Observable<Stocks> {
     const stock = STOCKS.find(h => h.code === code)!;
     return of(stock);
   }
@@ -31,6 +31,26 @@ export class StockService {
   getHoldings(): Observable<Holdings[]> {
     const holdings = of(HOLDINGS)
     return holdings;
+  }
+
+  // getTotal(): number {
+  //   return HOLDINGS[0].shares * HOLDINGS[0].price
+  // }
+
+  getCurTotalAsset(): number {
+    let total = 0;
+    for (let index of HOLDINGS) {
+      total += (index.curPrice * index.quantity)
+    }
+    return total
+  }
+
+  getAvgTotalAsset(): number {
+    let total = 0;
+    for (let index of HOLDINGS) {
+      total += (index.avgPrice * index.quantity)
+    }
+    return total
   }
 
   constructor() { }

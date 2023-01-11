@@ -8,7 +8,7 @@ import { Holdings } from "../../Engine/interfaces/stock";
   styleUrls: ['./stock-watchlist.component.scss']
 })
 export class StockWatchlistComponent implements OnInit {
-  @Input() searchedCode: Holdings[] = [];
+  @Input() holdings: Holdings[] = [];
 
   constructor() { }
 

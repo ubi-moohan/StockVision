@@ -1,60 +1,206 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-  <ng-container matColumnDef="year">
-    <th mat-header-cell *matHeaderCellDef> Year </th>
-    <td mat-cell *matCellDef="let element"> ({{element.year}}) </td>
-  </ng-container>
-
-  <ng-container matColumnDef="revenue">
-    <th mat-header-cell *matHeaderCellDef> Revenue </th>
-    <td mat-cell *matCellDef="let element"> {{element.revenue}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="grossmargin">
-    <th mat-header-cell *matHeaderCellDef> Gross Margin </th>
-    <td mat-cell *matCellDef="let element"> {{element.grossmargin}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="ebt">
-    <th mat-header-cell *matHeaderCellDef> EBT </th>
-    <td mat-cell *matCellDef="let element"> {{element.ebt}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="ebtmargin">
-    <th mat-header-cell *matHeaderCellDef> EBT Margin </th>
-    <td mat-cell *matCellDef="let element"> {{element.ebtmargin}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="netincome">
-    <th mat-header-cell *matHeaderCellDef> Net Income </th>
-    <td mat-cell *matCellDef="let element"> {{element.netincome}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="capex">
-    <th mat-header-cell *matHeaderCellDef> CAPEX </th>
-    <td mat-cell *matCellDef="let element"> {{element.capex}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="shares">
-    <th mat-header-cell *matHeaderCellDef> Shares </th>
-    <td mat-cell *matCellDef="let element"> {{element.shares}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="roa">
-    <th mat-header-cell *matHeaderCellDef> ROA </th>
-    <td mat-cell *matCellDef="let element"> {{element.roa}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="roic">
-    <th mat-header-cell *matHeaderCellDef> ROIC </th>
-    <td mat-cell *matCellDef="let element"> {{element.roic}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="roe">
-    <th mat-header-cell *matHeaderCellDef> ROE </th>
-    <td mat-cell *matCellDef="let element"> {{element.roe}} </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+<table>
+  <caption>Fiscal Statements</caption>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">Year</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.FY}}</td>
+  </tr>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">Total Revenue</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.totalRevenue}}</td>
+  </tr>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">Cost Revenue</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.costRevenue}}</td>
+  </tr>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">Operating Income</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.operatingIncome}}</td>
+  </tr>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">EBIT</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.EBIT}}</td>
+  </tr>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">EBITDA</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.EBITDA}}</td>
+  </tr>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">Net Income</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.netIncome}}</td>
+  </tr>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">Total Asset</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.totalAsset}}</td>
+  </tr>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">Liability</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.liability}}</td>
+  </tr>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">Equity</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.equity}}</td>
+  </tr>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">Common Stock Equity</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.stockEquity}}</td>
+  </tr>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">Shares</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.shares}}</td>
+  </tr>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">OCF</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.OCF}}</td>
+  </tr>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">CAPEX</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.CAPEX}}</td>
+  </tr>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">FCF</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.FCF}}</td>
+  </tr>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">EPS</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.EPS}}</td>
+  </tr>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">ROA</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.ROA}}</td>
+  </tr>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">ROE</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.ROE}}</td>
+  </tr>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">PS Ratio</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.PSR}}</td>
+  </tr>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">PB Ratio</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.PBR}}</td>
+  </tr>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">Trailing PE</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.trailingPER}}</td>
+  </tr>
+  <tr class="table-container">
+    <th class="table-row-title" scope="row">Forward PE</th>
+    <td class="table-row-content" *ngFor="let element of dataSource; let i = index;">{{element.forwardPER}}</td>
+  </tr>
 </table>
+
+<!--<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">-->
+<!--  <ng-container matColumnDef="FY">-->
+<!--    <th mat-header-cell *matHeaderCellDef> Year </th>-->
+<!--    <td mat-cell *matCellDef="let element"> ({{element.FY}}) </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="totalRevenue">-->
+<!--    <th mat-header-cell *matHeaderCellDef> Total Revenue </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.totalRevenue}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="costRevenue">-->
+<!--    <th mat-header-cell *matHeaderCellDef> Cost Revenue </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.costRevenue}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="operatingIncome">-->
+<!--    <th mat-header-cell *matHeaderCellDef> Operating Income </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.operatingIncome}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="EBIT">-->
+<!--    <th mat-header-cell *matHeaderCellDef> EBIT </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.EBIT}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="EBITDA">-->
+<!--    <th mat-header-cell *matHeaderCellDef> EBITDA </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.EBITDA}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="netIncome">-->
+<!--    <th mat-header-cell *matHeaderCellDef> Net Income </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.netIncome}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="totalAsset">-->
+<!--    <th mat-header-cell *matHeaderCellDef> Total Asset </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.totalAsset}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="liability">-->
+<!--    <th mat-header-cell *matHeaderCellDef> Liability </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.liability}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="equity">-->
+<!--    <th mat-header-cell *matHeaderCellDef> Equity </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.roic}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="stockEquity">-->
+<!--    <th mat-header-cell *matHeaderCellDef> Common Stock Equity </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.stockEquity}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="shares">-->
+<!--    <th mat-header-cell *matHeaderCellDef> Common Stock Equity </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.shares}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="OCF">-->
+<!--    <th mat-header-cell *matHeaderCellDef> Operating Cash Flow </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.OCF}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="CAPEX">-->
+<!--    <th mat-header-cell *matHeaderCellDef> CAPEX </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.CAPEX}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="FCF">-->
+<!--    <th mat-header-cell *matHeaderCellDef> FCF </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.FCF}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="EPS">-->
+<!--    <th mat-header-cell *matHeaderCellDef> EPS </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.EPS}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="ROA">-->
+<!--    <th mat-header-cell *matHeaderCellDef> ROA </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.ROA}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="ROE">-->
+<!--    <th mat-header-cell *matHeaderCellDef> ROE </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.ROE}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="PSR">-->
+<!--    <th mat-header-cell *matHeaderCellDef> PSR </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.PSR}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="PBR">-->
+<!--    <th mat-header-cell *matHeaderCellDef> PBR </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.PBR}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="trailingPER">-->
+<!--    <th mat-header-cell *matHeaderCellDef> Trailing PER </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.trailingPER}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <ng-container matColumnDef="forwardPER">-->
+<!--    <th mat-header-cell *matHeaderCellDef> Forward PER </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.forwardPER}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>-->
+<!--  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>-->
+<!--</table>-->

@@ -1,11 +1,11 @@
-<div class="stock-detail-container">
+<div class="stock-detail-container" *ngIf="stock">
   <div class="stock-detail-charts-watchlist">
-    <div class="stock-detail-holding"><h2><span style="color: #F7B715">{{stock?.code}}</span> {{stock?.name}}</h2></div>
+    <div class="stock-detail-holding"><h2><span style="color: #F7B715">{{stock.code}}</span> {{stock.name}}</h2></div>
     <div class="stock-detail-charts">
-      <app-stock-chart></app-stock-chart>
+      <app-stock-chart [stock]="stock"></app-stock-chart>
     </div>
     <div class="stock-detail-watchlist">
-      <app-stock-watchlist [searchedCode]="holdings" ></app-stock-watchlist>
+      <app-stock-watchlist [holdings]="holdings" ></app-stock-watchlist>
     </div>
   </div>
   <div style="position: absolute; left: 50%; top: 45rem"><a routerLink="/stock/predict"><button>PREDICT</button></a></div>
